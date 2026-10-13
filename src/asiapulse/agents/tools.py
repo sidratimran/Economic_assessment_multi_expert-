@@ -11,48 +11,48 @@ _COUNTRY = {"type": "string", "description": "Economy name, e.g. 'Pakistan', 'Vi
 
 TOOL_SPECS = [
     {"type": "function", "function": {
-        "name": "get_country_profile",
-        "description": "Pattern Expert: latest official indicators (World Bank WDI/WGI) with the year of each value, and the data-driven economic profile.",
-        "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
-    {"type": "function", "function": {
         "name": "get_forecast",
-        "description": "Forecast Expert: ensemble forecasts with 80% intervals for real GDP, GDP per capita, employment ratio and unemployment for 2030 and 2035.",
-        "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
-    {"type": "function", "function": {
-        "name": "get_validation",
-        "description": "Validation Expert: held-out backtest error, skill versus a naive forecast, interval coverage and a confidence label for each forecast series.",
+        "description": "GDP/employment forecasts with 80% intervals to 2035.",
         "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
     {"type": "function", "function": {
         "name": "get_risk",
-        "description": "Risk Expert: composite vulnerability index (0-100, higher = more vulnerable), eight pillar scores, rank in Asia and threshold-based red flags.",
+        "description": "Vulnerability index (0-100), pillar scores, rank and red flags.",
         "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
     {"type": "function", "function": {
-        "name": "get_peers",
-        "description": "Pattern Expert: economic cluster members and nearest peer economies in standardised feature space.",
+        "name": "get_validation",
+        "description": "Backtest accuracy, skill vs naive, confidence label.",
         "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
     {"type": "function", "function": {
         "name": "get_policy_options",
-        "description": "Policy Expert: ranked policy packages addressing diagnosed vulnerabilities, with SDG targets, KPIs, peer targets and Asian precedents that improved the KPI most.",
+        "description": "Top policy packages with SDG targets and peer benchmarks.",
         "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
     {"type": "function", "function": {
         "name": "run_policy_scenario",
-        "description": "Policy Lab: simulate shocks and policy levers to 2035; returns growth, unemployment (Okun's law), public-debt paths and re-scored risk versus baseline.",
+        "description": "Simulate shocks/policy levers to 2035. Returns growth, unemployment, debt paths vs baseline.",
         "parameters": {"type": "object", "properties": {
             "country": _COUNTRY,
-            "demand_shock_pp": {"type": "number", "description": "Global demand shock to growth, percentage points (temporary)"},
-            "oil_price_pct": {"type": "number", "description": "Oil price change, % (temporary)"},
-            "remittance_pct": {"type": "number", "description": "Change in remittance inflows, % (temporary)"},
-            "fiscal_consolidation_pp": {"type": "number", "description": "Primary-balance improvement, % of GDP, phased over 3 years"},
-            "public_investment_pp": {"type": "number", "description": "Extra public investment, % of GDP per year"},
-            "flfp_increase_pp": {"type": "number", "description": "Increase in female labour-force participation by 2035, pp"},
-            "interest_rate_pp": {"type": "number", "description": "Change in effective interest rate on public debt, pp"},
-            "digital_adoption_pp": {"type": "number", "description": "Increase in internet-user share of population by 2035, pp"}},
+            "demand_shock_pp": {"type": "number", "description": "Demand shock to growth (pp)"},
+            "oil_price_pct": {"type": "number", "description": "Oil price change (%)"},
+            "remittance_pct": {"type": "number", "description": "Remittance change (%)"},
+            "fiscal_consolidation_pp": {"type": "number", "description": "Fiscal consolidation (% GDP)"},
+            "public_investment_pp": {"type": "number", "description": "Extra public investment (% GDP/yr)"},
+            "flfp_increase_pp": {"type": "number", "description": "Female LFP increase (pp)"},
+            "interest_rate_pp": {"type": "number", "description": "Interest rate change (pp)"},
+            "digital_adoption_pp": {"type": "number", "description": "Internet adoption increase (pp)"}},
             "required": ["country"]}}},
     {"type": "function", "function": {
         "name": "compare_countries",
-        "description": "Side-by-side key indicators and vulnerability for 2-6 economies.",
+        "description": "Side-by-side indicators for 2-6 economies.",
         "parameters": {"type": "object", "properties": {"countries": {"type": "array", "items": _COUNTRY}},
                        "required": ["countries"]}}},
+    {"type": "function", "function": {
+        "name": "get_country_profile",
+        "description": "Latest official indicators and economic profile.",
+        "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
+    {"type": "function", "function": {
+        "name": "get_peers",
+        "description": "Cluster members and nearest peer economies.",
+        "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
 ]
 
 

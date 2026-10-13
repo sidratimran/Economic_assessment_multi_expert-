@@ -45,6 +45,6 @@ def qwen_settings() -> dict:
     return {
         "api_key": secret("DASHSCOPE_API_KEY"),
         "base_url": secret("QWEN_BASE_URL", "https://dashscope-intl.aliyuncs.com/compatible-mode/v1"),
-        "model": secret("QWEN_MODEL", "qwen/qwen3-32b"),
+        "model": secret("QWEN_MODEL", "qwen/qwen3.8-27b"),
         "max_tokens": int(secret("QWEN_MAX_TOKENS", "800") or 800),
     }
