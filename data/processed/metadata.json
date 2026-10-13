@@ -1,0 +1,822 @@
+{
+  "generated_utc": "2026-10-13 04:19",
+  "reference_year": 2025,
+  "forecast_end": 2035,
+  "economies_total": 49,
+  "economies_covered": 47,
+  "excluded": {
+    "Taiwan": "Not a World Bank member; WDI publishes no series.",
+    "North Korea": "WDI publishes almost no macro series for DPRK."
+  },
+  "indicators": [
+    {
+      "key": "gdp_usd",
+      "code": "NY.GDP.MKTP.CD",
+      "source": "World Bank WDI",
+      "rows": 1209,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "gdp_real",
+      "code": "NY.GDP.MKTP.KD",
+      "source": "World Bank WDI",
+      "rows": 1209,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "gdp_growth",
+      "code": "NY.GDP.MKTP.KD.ZG",
+      "source": "World Bank WDI",
+      "rows": 1208,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "gdp_pc_ppp",
+      "code": "NY.GDP.PCAP.PP.KD",
+      "source": "World Bank WDI",
+      "rows": 1190,
+      "countries": 46,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "emp_ratio",
+      "code": "SL.EMP.TOTL.SP.ZS",
+      "source": "World Bank WDI",
+      "rows": 1217,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "unemp",
+      "code": "SL.UEM.TOTL.ZS",
+      "source": "World Bank WDI",
+      "rows": 1217,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "youth_unemp",
+      "code": "SL.UEM.1524.ZS",
+      "source": "World Bank WDI",
+      "rows": 1217,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "female_lfp",
+      "code": "SL.TLF.CACT.FE.ZS",
+      "source": "World Bank WDI",
+      "rows": 1217,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "vuln_emp",
+      "code": "SL.EMP.VULN.ZS",
+      "source": "World Bank WDI",
+      "rows": 1217,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "agri_emp",
+      "code": "SL.AGR.EMPL.ZS",
+      "source": "World Bank WDI",
+      "rows": 1217,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "inflation",
+      "code": "FP.CPI.TOTL.ZG",
+      "source": "World Bank WDI",
+      "rows": 1133,
+      "countries": 46,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "reserves_months",
+      "code": "FI.RES.TOTL.MO",
+      "source": "World Bank WDI",
+      "rows": 1040,
+      "countries": 45,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "current_account",
+      "code": "BN.CAB.XOKA.GD.ZS",
+      "source": "World Bank WDI",
+      "rows": 1056,
+      "countries": 46,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "fdi",
+      "code": "BX.KLT.DINV.WD.GD.ZS",
+      "source": "World Bank WDI",
+      "rows": 1189,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "exports",
+      "code": "NE.EXP.GNFS.ZS",
+      "source": "World Bank WDI",
+      "rows": 1102,
+      "countries": 46,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "ext_debt",
+      "code": "DT.DOD.DECT.GN.ZS",
+      "source": "World Bank WDI",
+      "rows": 774,
+      "countries": 33,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "remittances",
+      "code": "BX.TRF.PWKR.DT.GD.ZS",
+      "source": "World Bank WDI",
+      "rows": 950,
+      "countries": 42,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "oil_rents",
+      "code": "NY.GDP.PETR.RT.ZS",
+      "source": "World Bank WDI",
+      "rows": 1010,
+      "countries": 47,
+      "latest_year": 2021,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "resource_rents",
+      "code": "NY.GDP.TOTL.RT.ZS",
+      "source": "World Bank WDI",
+      "rows": 1014,
+      "countries": 47,
+      "latest_year": 2021,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "gov_debt",
+      "code": "GC.DOD.TOTL.GD.ZS",
+      "source": "World Bank WDI",
+      "rows": 324,
+      "countries": 26,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "tax_rev",
+      "code": "GC.TAX.TOTL.GD.ZS",
+      "source": "World Bank WDI",
+      "rows": 673,
+      "countries": 36,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "health_exp",
+      "code": "SH.XPD.GHED.GD.ZS",
+      "source": "World Bank WDI",
+      "rows": 1121,
+      "countries": 47,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "edu_exp",
+      "code": "SE.XPD.TOTL.GD.ZS",
+      "source": "World Bank WDI",
+      "rows": 759,
+      "countries": 46,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "poverty",
+      "code": "SI.POV.DDAY",
+      "source": "World Bank WDI",
+      "rows": 397,
+      "countries": 38,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "gini",
+      "code": "SI.POV.GINI",
+      "source": "World Bank WDI",
+      "rows": 397,
+      "countries": 38,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "neet_youth",
+      "code": "SL.UEM.NEET.ZS",
+      "source": "World Bank WDI",
+      "rows": 460,
+      "countries": 41,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "population",
+      "code": "SP.POP.TOTL",
+      "source": "World Bank WDI",
+      "rows": 1222,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "pop_growth",
+      "code": "SP.POP.GROW",
+      "source": "World Bank WDI",
+      "rows": 1222,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "dependency",
+      "code": "SP.POP.DPND",
+      "source": "World Bank WDI",
+      "rows": 1222,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "urban",
+      "code": "SP.URB.TOTL.IN.ZS",
+      "source": "World Bank WDI",
+      "rows": 1222,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "manufacturing",
+      "code": "NV.IND.MANF.ZS",
+      "source": "World Bank WDI",
+      "rows": 1072,
+      "countries": 45,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "agriculture",
+      "code": "NV.AGR.TOTL.ZS",
+      "source": "World Bank WDI",
+      "rows": 1181,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "services",
+      "code": "NV.SRV.TOTL.ZS",
+      "source": "World Bank WDI",
+      "rows": 1163,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "trade_open",
+      "code": "NE.TRD.GNFS.ZS",
+      "source": "World Bank WDI",
+      "rows": 1102,
+      "countries": 46,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "internet",
+      "code": "IT.NET.USER.ZS",
+      "source": "World Bank WDI",
+      "rows": 1135,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "broadband",
+      "code": "IT.NET.BBND.P2",
+      "source": "World Bank WDI",
+      "rows": 1023,
+      "countries": 47,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "mobile",
+      "code": "IT.CEL.SETS.P2",
+      "source": "World Bank WDI",
+      "rows": 1160,
+      "countries": 47,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "hightech_exports",
+      "code": "TX.VAL.TECH.MF.ZS",
+      "source": "World Bank WDI",
+      "rows": 634,
+      "countries": 45,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "ict_services_exports",
+      "code": "BX.GSR.CCIS.ZS",
+      "source": "World Bank WDI",
+      "rows": 968,
+      "countries": 44,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "rnd",
+      "code": "GB.XPD.RSDV.GD.ZS",
+      "source": "World Bank WDI",
+      "rows": 602,
+      "countries": 41,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "patents_resident",
+      "code": "IP.PAT.RESD",
+      "source": "World Bank WDI",
+      "rows": 781,
+      "countries": 41,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "researchers",
+      "code": "SP.POP.SCIE.RD.P6",
+      "source": "World Bank WDI",
+      "rows": 403,
+      "countries": 37,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "tertiary_enrol",
+      "code": "SE.TER.ENRR",
+      "source": "World Bank WDI",
+      "rows": 903,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "secondary_enrol",
+      "code": "SE.SEC.ENRR",
+      "source": "World Bank WDI",
+      "rows": 882,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "life_exp",
+      "code": "SP.DYN.LE00.IN",
+      "source": "World Bank WDI",
+      "rows": 1175,
+      "countries": 47,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "u5_mortality",
+      "code": "SH.DYN.MORT",
+      "source": "World Bank WDI",
+      "rows": 1175,
+      "countries": 47,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "undernourishment",
+      "code": "SN.ITK.DEFC.ZS",
+      "source": "World Bank WDI",
+      "rows": 936,
+      "countries": 39,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "electricity",
+      "code": "EG.ELC.ACCS.ZS",
+      "source": "World Bank WDI",
+      "rows": 1175,
+      "countries": 47,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "clean_cooking",
+      "code": "EG.CFT.ACCS.ZS",
+      "source": "World Bank WDI",
+      "rows": 1150,
+      "countries": 46,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "logistics",
+      "code": "LP.LPI.OVRL.XQ",
+      "source": "World Bank WDI",
+      "rows": 291,
+      "countries": 46,
+      "latest_year": 2022,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "water",
+      "code": "SH.H2O.BASW.ZS",
+      "source": "World Bank WDI",
+      "rows": 1171,
+      "countries": 47,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "private_credit",
+      "code": "FS.AST.PRVT.GD.ZS",
+      "source": "World Bank WDI",
+      "rows": 952,
+      "countries": 46,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "account_ownership",
+      "code": "FX.OWN.TOTL.ZS",
+      "source": "World Bank WDI",
+      "rows": 194,
+      "countries": 45,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "npl",
+      "code": "FB.AST.NPER.ZS",
+      "source": "World Bank WDI",
+      "rows": 546,
+      "countries": 37,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "renewables",
+      "code": "EG.FEC.RNEW.ZS",
+      "source": "World Bank WDI",
+      "rows": 1038,
+      "countries": 47,
+      "latest_year": 2022,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "co2_pc",
+      "code": "EN.GHG.CO2.PC.CE.AR5",
+      "source": "World Bank WDI",
+      "rows": 1150,
+      "countries": 46,
+      "latest_year": 2024,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "pm25",
+      "code": "EN.ATM.PM25.MC.M3",
+      "source": "World Bank WDI",
+      "rows": 1128,
+      "countries": 47,
+      "latest_year": 2023,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "gov_effectiveness",
+      "code": "GOV_WGI_GE.EST",
+      "source": "World Bank WGI",
+      "rows": 1174,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "political_stability",
+      "code": "GOV_WGI_PV.EST",
+      "source": "World Bank WGI",
+      "rows": 1175,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "rule_of_law",
+      "code": "GOV_WGI_RL.EST",
+      "source": "World Bank WGI",
+      "rows": 1175,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "control_corruption",
+      "code": "GOV_WGI_CC.EST",
+      "source": "World Bank WGI",
+      "rows": 1174,
+      "countries": 47,
+      "latest_year": 2025,
+      "status": "ok",
+      "retrieved_utc": "2026-10-13"
+    },
+    {
+      "key": "imf_weo",
+      "code": "GGXWDG_NGDP,GGXONLB_NGDP,GGXCNL_NGDP,NGDP_RPCH,PCPIPCH",
+      "source": "IMF WEO (via DBnomics)",
+      "rows": 9043,
+      "countries": 46,
+      "status": "ok"
+    }
+  ],
+  "cluster": {
+    "k": 5,
+    "silhouette": 0.21,
+    "trials": [
+      {
+        "k": 4,
+        "silhouette": 0.205,
+        "min_size": 8
+      },
+      {
+        "k": 5,
+        "silhouette": 0.21,
+        "min_size": 7
+      },
+      {
+        "k": 6,
+        "silhouette": 0.195,
+        "min_size": 5
+      },
+      {
+        "k": 7,
+        "silhouette": 0.206,
+        "min_size": 1
+      }
+    ],
+    "features": [
+      "gdp_pc_ppp",
+      "growth_5y_avg",
+      "emp_ratio",
+      "unemp",
+      "resource_rents",
+      "manufacturing",
+      "agri_emp",
+      "female_lfp",
+      "gov_effectiveness",
+      "internet",
+      "tertiary_enrol",
+      "dependency"
+    ],
+    "explained_variance_2d": 0.593,
+    "names": {
+      "0": "Lower-income \u00b7 high unemployment",
+      "1": "Middle-income \u00b7 fast-growing",
+      "2": "High-income \u00b7 skills-rich",
+      "3": "Lower-income \u00b7 digitally lagging",
+      "4": "High-income \u00b7 working-age bulge"
+    }
+  },
+  "backtest_overall": [
+    {
+      "series": "emp_ratio",
+      "median_error": 1.535,
+      "median_skill": -0.103,
+      "share_beating_naive": 0.298,
+      "coverage80": 0.782
+    },
+    {
+      "series": "gdp_pc_ppp",
+      "median_error": 4.683,
+      "median_skill": 0.167,
+      "share_beating_naive": 0.717,
+      "coverage80": 0.824
+    },
+    {
+      "series": "gdp_real",
+      "median_error": 6.096,
+      "median_skill": 0.251,
+      "share_beating_naive": 0.638,
+      "coverage80": 0.783
+    },
+    {
+      "series": "unemp",
+      "median_error": 0.936,
+      "median_skill": -0.063,
+      "share_beating_naive": 0.34,
+      "coverage80": 0.831
+    }
+  ],
+  "interval_calibration": {
+    "emp_ratio": {
+      "factor": 2.734,
+      "coverage_raw_heldout": 0.411,
+      "coverage_calibrated_heldout": 0.77
+    },
+    "gdp_pc_ppp": {
+      "factor": 2.129,
+      "coverage_raw_heldout": 0.55,
+      "coverage_calibrated_heldout": 0.809
+    },
+    "gdp_real": {
+      "factor": 2.244,
+      "coverage_raw_heldout": 0.463,
+      "coverage_calibrated_heldout": 0.773
+    },
+    "unemp": {
+      "factor": 3.702,
+      "coverage_raw_heldout": 0.414,
+      "coverage_calibrated_heldout": 0.821
+    }
+  },
+  "growth_accuracy": [
+    {
+      "h": 1,
+      "growth_mae_pp": 3.51,
+      "growth_median_pp": 2.109,
+      "direction_hit": 0.801,
+      "n": 326
+    },
+    {
+      "h": 2,
+      "growth_mae_pp": 2.979,
+      "growth_median_pp": 1.736,
+      "direction_hit": 0.788,
+      "n": 325
+    },
+    {
+      "h": 3,
+      "growth_mae_pp": 2.533,
+      "growth_median_pp": 1.567,
+      "direction_hit": 0.827,
+      "n": 323
+    },
+    {
+      "h": 4,
+      "growth_mae_pp": 2.346,
+      "growth_median_pp": 1.519,
+      "direction_hit": 0.854,
+      "n": 321
+    },
+    {
+      "h": 5,
+      "growth_mae_pp": 2.186,
+      "growth_median_pp": 1.45,
+      "direction_hit": 0.861,
+      "n": 316
+    },
+    {
+      "h": 6,
+      "growth_mae_pp": 2.065,
+      "growth_median_pp": 1.358,
+      "direction_hit": 0.893,
+      "n": 270
+    },
+    {
+      "h": 7,
+      "growth_mae_pp": 1.953,
+      "growth_median_pp": 1.167,
+      "direction_hit": 0.897,
+      "n": 224
+    },
+    {
+      "h": 8,
+      "growth_mae_pp": 1.891,
+      "growth_median_pp": 1.087,
+      "direction_hit": 0.916,
+      "n": 178
+    },
+    {
+      "h": 9,
+      "growth_mae_pp": 1.895,
+      "growth_median_pp": 1.059,
+      "direction_hit": 0.917,
+      "n": 132
+    },
+    {
+      "h": 10,
+      "growth_mae_pp": 1.815,
+      "growth_median_pp": 1.055,
+      "direction_hit": 0.931,
+      "n": 87
+    }
+  ],
+  "gdp_accuracy_by_h": {
+    "1": 2.04,
+    "2": 3.39,
+    "3": 4.51,
+    "4": 5.86,
+    "5": 6.85,
+    "6": 7.92,
+    "7": 7.91,
+    "8": 8.57,
+    "9": 9.52,
+    "10": 10.08
+  },
+  "backtest_design": {
+    "fit_origins": "2008-2013",
+    "heldout_origins": "2014-2020",
+    "max_horizon": 10
+  },
+  "okun_pooled_beta": -0.047,
+  "runtime_sec": 216.7
+}

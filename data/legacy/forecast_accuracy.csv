@@ -1,0 +1,96 @@
+country,indicator,MAE_bn,MAPE_pct,MAE_pp
+China,GDP,660.65,3.97,
+India,GDP,97.74,3.54,
+Indonesia,GDP,84.93,6.93,
+South Korea,GDP,70.21,4.22,
+Thailand,GDP,30.07,5.79,
+Vietnam,GDP,28.3,7.28,
+Malaysia,GDP,20.23,5.39,
+Kazakhstan,GDP,33.66,16.65,
+Myanmar,GDP,8.34,12.3,
+Cambodia,GDP,4.24,15.43,
+Nepal,GDP,3.02,8.38,
+Laos,GDP,3.9,23.94,
+Kyrgyzstan,GDP,0.79,7.87,
+Bhutan,GDP,0.37,12.29,
+Timor-Leste,GDP,0.49,24.3,
+TOTAL,GDP,879.88,3.66,
+Afghanistan,GDP,2.09,13.01,
+Bangladesh,GDP,43.65,10.37,
+Brunei,GDP,3.19,21.21,
+Hong Kong,GDP,40.38,11.26,
+Japan,GDP,361.83,7.47,
+Maldives,GDP,1.23,27.77,
+Mongolia,GDP,1.54,9.77,
+North Korea,GDP,0.72,4.07,
+Philippines,GDP,12.11,3.17,
+Singapore,GDP,26.89,6.78,
+Sri Lanka,GDP,15.26,19.24,
+Taiwan,GDP,61.29,8.16,
+Tajikistan,GDP,1.57,16.79,
+Turkmenistan,GDP,1.8,4.04,
+Uzbekistan,GDP,14.09,19.73,
+Saudi Arabia,GDP,116.95,12.17,
+UAE,GDP,39.25,9.34,
+Iran,GDP,138.12,50.2,
+Iraq,GDP,32.3,15.3,
+Qatar,GDP,24.4,12.95,
+Kuwait,GDP,28.19,18.13,
+Oman,GDP,12.39,14.35,
+Bahrain,GDP,2.28,6.13,
+Jordan,GDP,1.53,3.34,
+Lebanon,GDP,28.5,112.2,
+Syria,GDP,5.83,45.89,
+Yemen,GDP,3.29,15.6,
+Palestine,GDP,1.15,6.97,
+Israel,GDP,46.41,9.45,
+Turkey,GDP,83.58,10.02,
+Afghanistan,Employment,,7.21,4.58
+Armenia,Employment,,1.49,0.76
+Azerbaijan,Employment,,1.86,1.2
+Bahrain,Employment,,4.93,3.23
+Bangladesh,Employment,,3.59,1.99
+Bhutan,Employment,,1.97,1.36
+Brunei,Employment,,2.82,1.82
+Cambodia,Employment,,1.49,1.17
+China,Employment,,1.33,0.86
+Cyprus,Employment,,3.88,2.35
+Georgia,Employment,,1.91,1.17
+India,Employment,,4.58,2.33
+Indonesia,Employment,,1.35,0.84
+Iran,Employment,,2.11,0.82
+Iraq,Employment,,1.91,0.74
+Israel,Employment,,3.62,2.32
+Japan,Employment,,2.91,2.18
+Jordan,Employment,,2.26,0.79
+Kazakhstan,Employment,,1.51,1.0
+Kuwait,Employment,,2.39,1.48
+Kyrgyzstan,Employment,,1.97,1.25
+Laos,Employment,,1.4,1.12
+Lebanon,Employment,,8.91,3.7
+Malaysia,Employment,,2.36,1.57
+Maldives,Employment,,3.53,2.07
+Mongolia,Employment,,2.87,1.7
+Myanmar,Employment,,6.66,4.46
+Nepal,Employment,,1.48,1.24
+North Korea,Employment,,0.99,0.74
+Oman,Employment,,4.36,2.65
+Pakistan,Employment,,3.04,1.63
+Palestine,Employment,,5.26,1.7
+Philippines,Employment,,3.97,2.59
+Qatar,Employment,,2.0,1.63
+Saudi Arabia,Employment,,2.44,1.29
+Singapore,Employment,,2.5,1.87
+South Korea,Employment,,1.23,0.82
+Sri Lanka,Employment,,2.8,1.8
+Syria,Employment,,3.27,1.27
+Taiwan,Employment,,1.72,1.22
+Tajikistan,Employment,,2.34,1.44
+Thailand,Employment,,1.41,1.01
+Timor-Leste,Employment,,3.39,1.66
+Turkey,Employment,,4.53,2.36
+Turkmenistan,Employment,,2.51,1.61
+UAE,Employment,,2.13,1.63
+Uzbekistan,Employment,,2.27,1.43
+Vietnam,Employment,,2.3,1.81
+Yemen,Employment,,6.26,2.17

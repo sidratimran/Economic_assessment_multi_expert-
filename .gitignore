@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# secrets — never commit
+.env
+.streamlit/secrets.toml
+# local tool settings
+.claude/
+# live market cache and nowcast log are machine-local
+data/live/
+*.zip
