@@ -73,10 +73,13 @@ def execute(store: Store, name: str, args: dict) -> dict | list:
         if name == "get_peers":
             return store.peers(iso)
         if name == "get_policy_options":
-            pol = store.policies(iso)
-            for p in pol:  # keep the payload compact for the LLM
-                p["precedents"] = [{k: (round(v, 2) if isinstance(v, float) else v) for k, v in d.items() if k != "iso3"}
-                                   for d in p["precedents"]]
+            pol = store.policies(iso)[:4]
+            for p in pol:
+                p["precedents"] = [{"country": d.get("country", ""), "change": round(d.get("change", 0), 1)}
+                                   for d in p.get("precedents", [])[:2]]
+                for k in list(p.keys()):
+                    if k not in ("title", "trigger", "kpi_label", "kpi_now", "kpi_peer_target", "sdgs", "precedents", "horizon"):
+                        del p[k]
             return pol
         if name == "run_policy_scenario":
             valid = {f.name for f in fields(Levers)}
