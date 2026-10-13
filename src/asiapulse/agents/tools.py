@@ -28,31 +28,23 @@ TOOL_SPECS = [
         "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
     {"type": "function", "function": {
         "name": "run_policy_scenario",
-        "description": "Simulate shocks/policy levers to 2035. Returns growth, unemployment, debt paths vs baseline.",
+        "description": "Simulate shocks to 2035. Levers: demand_shock_pp, oil_price_pct, remittance_pct, fiscal_consolidation_pp, public_investment_pp, flfp_increase_pp, interest_rate_pp, digital_adoption_pp.",
         "parameters": {"type": "object", "properties": {
             "country": _COUNTRY,
-            "demand_shock_pp": {"type": "number", "description": "Demand shock to growth (pp)"},
-            "oil_price_pct": {"type": "number", "description": "Oil price change (%)"},
-            "remittance_pct": {"type": "number", "description": "Remittance change (%)"},
-            "fiscal_consolidation_pp": {"type": "number", "description": "Fiscal consolidation (% GDP)"},
-            "public_investment_pp": {"type": "number", "description": "Extra public investment (% GDP/yr)"},
-            "flfp_increase_pp": {"type": "number", "description": "Female LFP increase (pp)"},
-            "interest_rate_pp": {"type": "number", "description": "Interest rate change (pp)"},
-            "digital_adoption_pp": {"type": "number", "description": "Internet adoption increase (pp)"}},
+            "demand_shock_pp": {"type": "number"},
+            "oil_price_pct": {"type": "number"},
+            "remittance_pct": {"type": "number"},
+            "fiscal_consolidation_pp": {"type": "number"},
+            "public_investment_pp": {"type": "number"},
+            "flfp_increase_pp": {"type": "number"},
+            "interest_rate_pp": {"type": "number"},
+            "digital_adoption_pp": {"type": "number"}},
             "required": ["country"]}}},
     {"type": "function", "function": {
         "name": "compare_countries",
         "description": "Side-by-side indicators for 2-6 economies.",
         "parameters": {"type": "object", "properties": {"countries": {"type": "array", "items": _COUNTRY}},
                        "required": ["countries"]}}},
-    {"type": "function", "function": {
-        "name": "get_country_profile",
-        "description": "Latest official indicators and economic profile.",
-        "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
-    {"type": "function", "function": {
-        "name": "get_peers",
-        "description": "Cluster members and nearest peer economies.",
-        "parameters": {"type": "object", "properties": {"country": _COUNTRY}, "required": ["country"]}}},
 ]
 
 
