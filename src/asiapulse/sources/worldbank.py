@@ -61,10 +61,10 @@ def fetch_all(indicators: list[Indicator], iso3: list[str], end_year: int,
                 "rows": int(len(df)), "countries": int(df.iso3.nunique()) if len(df) else 0,
                 "latest_year": int(df.year.max()) if len(df) else None, "status": "ok",
             })
-            log(f"  ✓ {ind.code:<22} {len(df):>5} obs  {df.iso3.nunique() if len(df) else 0:>2} economies")
+            log(f"  OK {ind.code:<22} {len(df):>5} obs  {df.iso3.nunique() if len(df) else 0:>2} economies")
         except Exception as ex:
             manifest.append({"key": ind.key, "code": ind.code, "status": f"failed: {ex}"})
-            log(f"  ✗ {ind.code:<22} {ex}")
+            log(f"  FAIL {ind.code:<22} {ex}")
     long = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame(columns=["iso3", "year", "key", "value"])
     for m in manifest:
         m["retrieved_utc"] = datetime.now(timezone.utc).strftime("%Y-%m-%d")

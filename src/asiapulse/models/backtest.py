@@ -71,7 +71,7 @@ def run_backtest(panel: pd.DataFrame, use_panel: bool = True, log=print) -> pd.D
                     for m in ALL_MEMBERS:
                         row[f"pred_{m}"] = f[m]
                     rows.append(row)
-        log(f"  ✓ backtested {key}{' (+ panel model)' if ppaths else ''}")
+        log(f"  OK backtested {key}{' (+ panel model)' if ppaths else ''}")
     bt = pd.DataFrame(rows)
     for m in ALL_MEMBERS:
         bt[f"err_{m}"] = [_err(k, a, p) for k, a, p in zip(bt.series, bt.actual, bt[f"pred_{m}"])]
@@ -84,6 +84,9 @@ def _inv(errs: dict) -> dict:
     return {m: v / tot for m, v in w.items()}
 
 
+HORIZON_BANDS = {"short": range(1, 4), "medium": range(4, 7), "long": range(7, 11)}
+
+
 def ensemble_weights(bt: pd.DataFrame, split: str | None = "fit") -> dict[tuple[str, str], dict[str, float]]:
     """Member weights per (iso3, series): 50% own record + 50% Asia-wide record (inverse squared MAE)."""
     src = bt if split is None else bt[bt.split == split]
@@ -94,6 +97,24 @@ def ensemble_weights(bt: pd.DataFrame, split: str | None = "fit") -> dict[tuple[
         members = set(own) | set(glob.get(key, {}))
         out[(iso, key)] = {m: (1 - SHRINK) * own.get(m, glob[key].get(m, 0.0)) + SHRINK * glob[key].get(m, 0.0) for m in members}
     return out
+
+
+def ensemble_weights_by_band(bt: pd.DataFrame, split: str | None = "fit") -> dict[str, dict[tuple[str, str], dict[str, float]]]:
+    """Horizon-band weights: separate weights for short (1-3y), medium (4-6y), long (7-10y)."""
+    src = bt if split is None else bt[bt.split == split]
+    band_weights = {}
+    for band_name, hrs in HORIZON_BANDS.items():
+        band_src = src[src.h.isin(hrs)]
+        if band_src.empty:
+            continue
+        glob = {k: _inv({m: g[f"err_{m}"].mean() for m in ALL_MEMBERS}) for k, g in band_src.groupby("series")}
+        w = {}
+        for (iso, key), g in band_src.groupby(["iso3", "series"]):
+            own = _inv({m: g[f"err_{m}"].mean() for m in ALL_MEMBERS})
+            members = set(own) | set(glob.get(key, {}))
+            w[(iso, key)] = {m: (1 - SHRINK) * own.get(m, glob[key].get(m, 0.0)) + SHRINK * glob[key].get(m, 0.0) for m in members}
+        band_weights[band_name] = w
+    return band_weights
 
 
 def global_weights(bt: pd.DataFrame, split: str | None = None) -> dict[str, dict[str, float]]:
@@ -113,13 +134,18 @@ def calibration(bt: pd.DataFrame) -> dict[str, dict]:
     return out
 
 
-def evaluate_heldout(bt: pd.DataFrame, weights, calib: dict) -> pd.DataFrame:
+def evaluate_heldout(bt: pd.DataFrame, weights, calib: dict, band_weights=None) -> pd.DataFrame:
     """Score the *weighted* ensemble on held-out origins. Adds pred, err, covered80."""
     ho = bt[bt.split == "heldout"].copy()
     gw = global_weights(bt, "fit")
     preds = []
     for r in ho.itertuples():
-        w = weights.get((r.iso3, r.series)) or gw.get(r.series) or {m: 1.0 for m in ALL_MEMBERS}
+        if band_weights:
+            band = "short" if r.h <= 3 else ("medium" if r.h <= 6 else "long")
+            bw = band_weights.get(band, {})
+            w = bw.get((r.iso3, r.series)) or weights.get((r.iso3, r.series)) or gw.get(r.series) or {m: 1.0 for m in ALL_MEMBERS}
+        else:
+            w = weights.get((r.iso3, r.series)) or gw.get(r.series) or {m: 1.0 for m in ALL_MEMBERS}
         num = den = 0.0
         for m in ALL_MEMBERS:
             p = getattr(r, f"pred_{m}")

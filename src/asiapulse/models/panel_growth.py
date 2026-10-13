@@ -18,7 +18,9 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import HistGradientBoostingRegressor
 
-FEATURES = ["g1", "g3", "g5", "g10", "vol10", "lpc", "pop_g", "infl", "dep", "agri", "manuf", "gov_eff", "trade"]
+FEATURES = ["g1", "g3", "g5", "g10", "vol10", "lpc", "pop_g", "infl", "dep",
+            "agri", "manuf", "gov_eff", "trade", "internet", "rnd", "tertiary",
+            "priv_credit", "urban", "invest"]
 
 
 def build_features(panel: pd.DataFrame) -> pd.DataFrame:
@@ -42,6 +44,12 @@ def build_features(panel: pd.DataFrame) -> pd.DataFrame:
         f["manuf"] = g.get("manufacturing")
         f["gov_eff"] = g.get("gov_effectiveness")
         f["trade"] = g.get("trade_open")
+        f["internet"] = g.get("internet")
+        f["rnd"] = g.get("rnd")
+        f["tertiary"] = g.get("tertiary_enrol")
+        f["priv_credit"] = g.get("private_credit")
+        f["urban"] = g.get("urbanization")
+        f["invest"] = g.get("fdi")
         f["iso3"] = iso
         out.append(f.reset_index().rename(columns={"index": "year"}))
     feats = pd.concat(out, ignore_index=True)
@@ -58,8 +66,8 @@ def _targets(panel: pd.DataFrame, key: str, h: int) -> pd.Series:
 
 
 def _model():
-    return HistGradientBoostingRegressor(max_depth=3, learning_rate=0.05, max_iter=250, min_samples_leaf=15,
-                                         l2_regularization=1.0, random_state=0)
+    return HistGradientBoostingRegressor(max_depth=4, learning_rate=0.03, max_iter=400, min_samples_leaf=12,
+                                         l2_regularization=0.5, random_state=0)
 
 
 def predict_paths(panel: pd.DataFrame, key: str, origin: int, H: int, feats: pd.DataFrame | None = None,

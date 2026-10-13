@@ -42,7 +42,7 @@ def main(refresh: bool = False) -> None:
         manifest.append({"key": "imf_weo", "code": ",".join(imf_weo.SUBJECTS), "source": "IMF WEO (via DBnomics)",
                          "rows": int(len(imf)), "countries": int(imf.iso3.nunique()), "status": "ok"})
     except Exception as ex:
-        print(f"  ✗ IMF WEO unavailable: {ex}")
+        print(f"  FAIL IMF WEO unavailable: {ex}")
         imf = pd.DataFrame(columns=["iso3", "year", "key", "value"])
         manifest.append({"key": "imf_weo", "code": "IMF WEO", "status": f"failed: {ex}"})
 
@@ -62,7 +62,8 @@ def main(refresh: bool = False) -> None:
     bt_rows = bt.run_backtest(panel)
     fit_w = bt.ensemble_weights(bt_rows, split="fit")
     calib = bt.calibration(bt_rows)
-    heldout = bt.evaluate_heldout(bt_rows, fit_w, calib)
+    fit_bw = bt.ensemble_weights_by_band(bt_rows, split="fit")
+    heldout = bt.evaluate_heldout(bt_rows, fit_w, calib, band_weights=fit_bw)
     heldout.to_csv(PROCESSED / "backtest_heldout.csv", index=False)
     bt_sum = bt.summarize(heldout)
     bt_sum.to_csv(PROCESSED / "backtest_summary.csv", index=False)
@@ -70,6 +71,7 @@ def main(refresh: bool = False) -> None:
     growth_acc = bt.growth_accuracy(heldout).round(3)
     growth_acc.to_csv(PROCESSED / "backtest_growth_accuracy.csv", index=False)
     weights = bt.ensemble_weights(bt_rows, split=None)  # production weights use all origins
+    band_weights = bt.ensemble_weights_by_band(bt_rows, split=None)
     print(f"  interval calibration: {calib}")
 
     print("[4/7] Forecasting to", FORECAST_END, "(5-member ensemble incl. cross-country panel model)")
@@ -85,8 +87,9 @@ def main(refresh: bool = False) -> None:
         pool = pooled_sigma(panel, key)
         for iso, g in panel[key].groupby(level="iso3"):
             extra = {"panel": panel_paths[(iso, key)]} if (iso, key) in panel_paths else None
+            bw = {b: band_weights[b].get((iso, key), weights.get((iso, key), {})) for b in band_weights} if band_weights else None
             fc = forecast_series(g.droplevel("iso3"), key, FORECAST_END, weights.get((iso, key)),
-                                 calib=calib[key]["factor"], sigma_pool=pool, extra=extra)
+                                 calib=calib[key]["factor"], sigma_pool=pool, extra=extra, band_weights=bw)
             if fc is None:
                 continue
             fc.insert(0, "series", key)
@@ -164,7 +167,7 @@ def main(refresh: bool = False) -> None:
         "runtime_sec": round(time.time() - t0, 1),
     }
     (PROCESSED / "metadata.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
-    print(f"Done in {meta['runtime_sec']}s → {PROCESSED}")
+    print(f"Done in {meta['runtime_sec']}s -> {PROCESSED}")
 
 
 if __name__ == "__main__":

@@ -22,7 +22,7 @@ import warnings
 import numpy as np
 import pandas as pd
 
-MEMBERS = ("naive", "drift", "holt", "trend")
+MEMBERS = ("naive", "drift", "holt", "trend", "ets")
 EXTRA_MEMBERS = ("panel",)            # cross-country model, supplied from models.panel_growth
 ALL_MEMBERS = MEMBERS + EXTRA_MEMBERS
 
@@ -50,6 +50,7 @@ def _member_paths(y: np.ndarray, h: int) -> dict[str, np.ndarray]:
     paths["trend"] = intercept + slope * (len(tail) - 1 + steps)
 
     holt = None
+    ets = None
     if n >= 8:
         try:
             from statsmodels.tsa.holtwinters import ExponentialSmoothing
@@ -61,7 +62,17 @@ def _member_paths(y: np.ndarray, h: int) -> dict[str, np.ndarray]:
                 holt = np.asarray(fit.forecast(h))
         except Exception:
             holt = None
+        try:
+            from statsmodels.tsa.exponential_smoothing.ets import ETSModel
+
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                ets_fit = ETSModel(y, error="add", trend="add", damped_trend=True).fit(disp=False)
+                ets = np.asarray(ets_fit.forecast(h))
+        except Exception:
+            ets = None
     paths["holt"] = holt if holt is not None and np.all(np.isfinite(holt)) else paths["drift"]
+    paths["ets"] = ets if ets is not None and np.all(np.isfinite(ets)) else paths["holt"]
     return paths
 
 
@@ -85,9 +96,18 @@ def pooled_sigma(panel: pd.DataFrame, key: str) -> float:
     return float(np.median(vals)) if vals else 0.0
 
 
+def _band_for_h(h_idx: int) -> str:
+    if h_idx < 3:
+        return "short"
+    if h_idx < 6:
+        return "medium"
+    return "long"
+
+
 def forecast_series(s: pd.Series, key: str, end_year: int, weights: dict[str, float] | None = None,
                     calib: float = 1.0, sigma_pool: float | None = None,
-                    extra: dict[str, np.ndarray] | None = None) -> pd.DataFrame | None:
+                    extra: dict[str, np.ndarray] | None = None,
+                    band_weights: dict[str, dict[str, float]] | None = None) -> pd.DataFrame | None:
     """Forecast one country-series. ``s`` is indexed by year. Returns year/value/lo/hi/member columns."""
     log, lo_b, hi_b, _ = SERIES[key]
     s = s.dropna().sort_index()
@@ -99,19 +119,30 @@ def forecast_series(s: pd.Series, key: str, end_year: int, weights: dict[str, fl
         return None
     y = np.log(s.values) if log else s.values.astype(float)
     paths = _member_paths(y, h)
-    for name, arr in (extra or {}).items():  # externally computed members (same transformed space)
+    for name, arr in (extra or {}).items():
         arr = np.asarray(arr, dtype=float)
         if len(arr) >= 1 and np.all(np.isfinite(arr)):
-            if len(arr) < h:  # extend at the last implied growth rate
+            if len(arr) < h:
                 step = arr[-1] - (arr[-2] if len(arr) > 1 else y[-1])
                 arr = np.concatenate([arr, arr[-1] + step * np.arange(1, h - len(arr) + 1)])
             paths[name] = arr[:h]
     used = [m for m in ALL_MEMBERS if m in paths]
-    w = {m: 1.0 for m in used} if not weights else {m: max(weights.get(m, 0.0) or 0.0, 0.0) for m in used}
-    tot = sum(w.values())
-    if tot <= 0:
-        w, tot = {m: 1.0 for m in used}, float(len(used))
-    ens = sum(paths[m] * w[m] for m in used) / tot
+    if band_weights:
+        ens = np.zeros(h)
+        for i in range(h):
+            band = _band_for_h(i)
+            bw = band_weights.get(band, weights or {})
+            w = {m: max(bw.get(m, 0.0) or 0.0, 0.0) for m in used}
+            tot = sum(w.values())
+            if tot <= 0:
+                w, tot = {m: 1.0 for m in used}, float(len(used))
+            ens[i] = sum(paths[m][i] * w[m] for m in used) / tot
+    else:
+        w = {m: 1.0 for m in used} if not weights else {m: max(weights.get(m, 0.0) or 0.0, 0.0) for m in used}
+        tot = sum(w.values())
+        if tot <= 0:
+            w, tot = {m: 1.0 for m in used}, float(len(used))
+        ens = sum(paths[m] * w[m] for m in used) / tot
 
     sigma = robust_sigma(y)
     if sigma_pool:  # partial pooling: geometric mean of own and panel volatility

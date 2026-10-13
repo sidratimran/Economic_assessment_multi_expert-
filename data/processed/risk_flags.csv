@@ -15,7 +15,7 @@ AFG,clean_cooking,Most households lack clean cooking fuels,infrastructure,30.0,5
 AFG,water_gap,Basic drinking-water access below 90%,infrastructure,80.83,90.0,SDG 6.1.
 AFG,unbanked,Majority of adults lack a financial account,finance,9.65,50.0,SDG 8.10 financial inclusion.
 AFG,air_pollution,"Hazardous air pollution (PM2.5 > 35 µg/m³, WHO interim target 1)",climate,37.95,35.0,Large health and productivity costs.
-AFG,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,1.07,1.5,Below the pace needed to raise living standards meaningfully.
+AFG,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.9,1.5,Below the pace needed to raise living standards meaningfully.
 ARE,oil_dependence,Oil dependence: oil rents above 10% of GDP,external,15.67,10.0,Exposure to oil-price cycles and energy-transition risk.
 ARE,low_tax,Tax revenue below 10% of GDP,fiscal,0.65,10.0,Below the level generally associated with sustainable state capacity.
 ARE,air_pollution,"Hazardous air pollution (PM2.5 > 35 µg/m³, WHO interim target 1)",climate,57.19,35.0,Large health and productivity costs.
@@ -28,7 +28,7 @@ AZE,oil_dependence,Oil dependence: oil rents above 10% of GDP,external,20.98,10.
 AZE,emp_decline,Employment ratio fell >2 pp in 5 years,labour,-2.52,-2.0,Weakening job creation relative to working-age population.
 AZE,low_rnd,Very low R&D investment (< 0.3% of GDP),technology,0.21,0.3,Limits technology absorption and innovation (SDG 9.5).
 AZE,shallow_finance,Shallow financial system: private credit below 25% of GDP,finance,24.86,25.0,"Firms, especially SMEs, are credit-constrained."
-AZE,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.78,1.5,Below the pace needed to raise living standards meaningfully.
+AZE,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.71,1.5,Below the pace needed to raise living standards meaningfully.
 BGD,low_tax,Tax revenue below 10% of GDP,fiscal,7.64,10.0,Below the level generally associated with sustainable state capacity.
 BGD,child_mortality,"Under-5 mortality above the SDG 3.2 target (25 per 1,000)",human_capital,30.5,25.0,SDG 3.2 target.
 BGD,clean_cooking,Most households lack clean cooking fuels,infrastructure,29.0,50.0,SDG 7.1.2; major health burden from household air pollution.
@@ -43,7 +43,7 @@ BHR,low_rnd,Very low R&D investment (< 0.3% of GDP),technology,0.19,0.3,Limits t
 BHR,air_pollution,"Hazardous air pollution (PM2.5 > 35 µg/m³, WHO interim target 1)",climate,56.57,35.0,Large health and productivity costs.
 BRN,oil_dependence,Oil dependence: oil rents above 10% of GDP,external,10.37,10.0,Exposure to oil-price cycles and energy-transition risk.
 BRN,low_rnd,Very low R&D investment (< 0.3% of GDP),technology,0.28,0.3,Limits technology absorption and innovation (SDG 9.5).
-BRN,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.58,1.5,Below the pace needed to raise living standards meaningfully.
+BRN,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.49,1.5,Below the pace needed to raise living standards meaningfully.
 BTN,ca_deficit,Current-account deficit wider than 5% of GDP,external,-19.4,-5.0,Common early-warning threshold for external financing stress.
 BTN,ext_debt,External debt above 60% of GNI,external,114.5,60.0,High external debt raises rollover and exchange-rate risk.
 BTN,public_debt,Public debt above 70% of GDP,fiscal,102.88,70.0,IMF market-access-country debt-burden benchmark for emerging markets.
@@ -72,7 +72,7 @@ IRN,low_flfp,Female labour-force participation below 30%,labour,14.01,30.0,Large
 IRN,instability,Severe political instability / conflict risk (WGI < -1),governance,-1.69,-1.0,Bottom tail of the Worldwide Governance Indicators.
 IRN,weak_gov,Weak government effectiveness (WGI < -0.5),governance,-0.86,-0.5,Constrains policy implementation capacity.
 IRN,air_pollution,"Hazardous air pollution (PM2.5 > 35 µg/m³, WHO interim target 1)",climate,40.25,35.0,Large health and productivity costs.
-IRN,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,1.0,1.5,Below the pace needed to raise living standards meaningfully.
+IRN,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,1.22,1.5,Below the pace needed to raise living standards meaningfully.
 IRQ,oil_dependence,Oil dependence: oil rents above 10% of GDP,external,42.79,10.0,Exposure to oil-price cycles and energy-transition risk.
 IRQ,low_tax,Tax revenue below 10% of GDP,fiscal,1.34,10.0,Below the level generally associated with sustainable state capacity.
 IRQ,unemployment,Unemployment above 10%,labour,15.48,10.0,Double-digit unemployment.
@@ -97,7 +97,7 @@ JOR,neet,"Over 25% of youth not in education, employment or training",social,29.
 JOR,undernourishment,Undernourishment above 10% of population,social,12.2,10.0,SDG 2.1 indicator.
 JOR,unbanked,Majority of adults lack a financial account,finance,46.46,50.0,SDG 8.10 financial inclusion.
 JPN,public_debt,Public debt above 70% of GDP,fiscal,234.86,70.0,IMF market-access-country debt-burden benchmark for emerging markets.
-JPN,contraction,Forecast real GDP contraction,growth,-0.36,0.0,Model projects shrinking real output.
+JPN,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.46,1.5,Below the pace needed to raise living standards meaningfully.
 KAZ,high_inflation,Inflation above 10%,macro,11.38,10.0,Double-digit inflation erodes real incomes and signals loss of nominal anchor.
 KAZ,ext_debt,External debt above 60% of GNI,external,62.6,60.0,High external debt raises rollover and exchange-rate risk.
 KAZ,oil_dependence,Oil dependence: oil rents above 10% of GDP,external,14.84,10.0,Exposure to oil-price cycles and energy-transition risk.
@@ -115,7 +115,7 @@ KWT,oil_dependence,Oil dependence: oil rents above 10% of GDP,external,27.58,10.
 KWT,low_rnd,Very low R&D investment (< 0.3% of GDP),technology,0.09,0.3,Limits technology absorption and innovation (SDG 9.5).
 KWT,shallow_finance,Shallow financial system: private credit below 25% of GDP,finance,4.92,25.0,"Firms, especially SMEs, are credit-constrained."
 KWT,air_pollution,"Hazardous air pollution (PM2.5 > 35 µg/m³, WHO interim target 1)",climate,62.35,35.0,Large health and productivity costs.
-KWT,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.47,1.5,Below the pace needed to raise living standards meaningfully.
+KWT,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.35,1.5,Below the pace needed to raise living standards meaningfully.
 LAO,ext_debt,External debt above 60% of GNI,external,115.4,60.0,High external debt raises rollover and exchange-rate risk.
 LAO,public_debt,Public debt above 70% of GDP,fiscal,91.38,70.0,IMF market-access-country debt-burden benchmark for emerging markets.
 LAO,weak_gov,Weak government effectiveness (WGI < -0.5),governance,-0.59,-0.5,Constrains policy implementation capacity.
@@ -137,7 +137,7 @@ LBN,weak_gov,Weak government effectiveness (WGI < -0.5),governance,-1.1,-0.5,Con
 LBN,undernourishment,Undernourishment above 10% of population,social,11.1,10.0,SDG 2.1 indicator.
 LBN,bank_stress,Banking stress: non-performing loans above 8%,finance,15.19,8.0,Elevated NPLs constrain credit and can become fiscal liabilities.
 LBN,unbanked,Majority of adults lack a financial account,finance,23.04,50.0,SDG 8.10 financial inclusion.
-LBN,contraction,Forecast real GDP contraction,growth,-1.21,0.0,Model projects shrinking real output.
+LBN,contraction,Forecast real GDP contraction,growth,-1.45,0.0,Model projects shrinking real output.
 LKA,low_reserves,Reserves below 3 months of imports,macro,2.87,3.0,IMF traditional reserve-adequacy rule of thumb.
 LKA,public_debt,Public debt above 70% of GDP,fiscal,99.43,70.0,IMF market-access-country debt-burden benchmark for emerging markets.
 LKA,low_tax,Tax revenue below 10% of GDP,fiscal,9.88,10.0,Below the level generally associated with sustainable state capacity.
@@ -161,7 +161,7 @@ MMR,clean_cooking,Most households lack clean cooking fuels,infrastructure,46.0,5
 MMR,water_gap,Basic drinking-water access below 90%,infrastructure,85.69,90.0,SDG 6.1.
 MMR,unbanked,Majority of adults lack a financial account,finance,47.79,50.0,SDG 8.10 financial inclusion.
 MMR,air_pollution,"Hazardous air pollution (PM2.5 > 35 µg/m³, WHO interim target 1)",climate,35.07,35.0,Large health and productivity costs.
-MMR,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,1.08,1.5,Below the pace needed to raise living standards meaningfully.
+MMR,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.71,1.5,Below the pace needed to raise living standards meaningfully.
 MNG,ca_deficit,Current-account deficit wider than 5% of GDP,external,-8.36,-5.0,Common early-warning threshold for external financing stress.
 MNG,ext_debt,External debt above 60% of GNI,external,181.86,60.0,High external debt raises rollover and exchange-rate risk.
 MNG,emp_decline,Employment ratio fell >2 pp in 5 years,labour,-2.8,-2.0,Weakening job creation relative to working-age population.
@@ -184,7 +184,6 @@ OMN,oil_dependence,Oil dependence: oil rents above 10% of GDP,external,23.54,10.
 OMN,low_flfp,Female labour-force participation below 30%,labour,29.96,30.0,Large untapped labour supply; growth and inclusion gap.
 OMN,neet,"Over 25% of youth not in education, employment or training",social,25.5,25.0,SDG 8.6 indicator.
 OMN,air_pollution,"Hazardous air pollution (PM2.5 > 35 µg/m³, WHO interim target 1)",climate,46.86,35.0,Large health and productivity costs.
-OMN,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,1.48,1.5,Below the pace needed to raise living standards meaningfully.
 PAK,public_debt,Public debt above 70% of GDP,fiscal,73.64,70.0,IMF market-access-country debt-burden benchmark for emerging markets.
 PAK,low_flfp,Female labour-force participation below 30%,labour,24.05,30.0,Large untapped labour supply; growth and inclusion gap.
 PAK,neet,"Over 25% of youth not in education, employment or training",social,28.52,25.0,SDG 8.6 indicator.
@@ -211,10 +210,9 @@ PSE,instability,Severe political instability / conflict risk (WGI < -1),governan
 PSE,weak_gov,Weak government effectiveness (WGI < -0.5),governance,-1.32,-0.5,Constrains policy implementation capacity.
 PSE,child_mortality,"Under-5 mortality above the SDG 3.2 target (25 per 1,000)",human_capital,37.9,25.0,SDG 3.2 target.
 PSE,unbanked,Majority of adults lack a financial account,finance,39.62,50.0,SDG 8.10 financial inclusion.
-PSE,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.85,1.5,Below the pace needed to raise living standards meaningfully.
+PSE,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,1.11,1.5,Below the pace needed to raise living standards meaningfully.
 QAT,oil_dependence,Oil dependence: oil rents above 10% of GDP,external,15.28,10.0,Exposure to oil-price cycles and energy-transition risk.
 QAT,air_pollution,"Hazardous air pollution (PM2.5 > 35 µg/m³, WHO interim target 1)",climate,107.76,35.0,Large health and productivity costs.
-QAT,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,1.09,1.5,Below the pace needed to raise living standards meaningfully.
 SAU,oil_dependence,Oil dependence: oil rents above 10% of GDP,external,23.69,10.0,Exposure to oil-price cycles and energy-transition risk.
 SAU,low_tax,Tax revenue below 10% of GDP,fiscal,8.09,10.0,Below the level generally associated with sustainable state capacity.
 SAU,air_pollution,"Hazardous air pollution (PM2.5 > 35 µg/m³, WHO interim target 1)",climate,73.52,35.0,Large health and productivity costs.
@@ -228,8 +226,8 @@ SYR,weak_gov,Weak government effectiveness (WGI < -0.5),governance,-1.59,-0.5,Co
 SYR,low_rnd,Very low R&D investment (< 0.3% of GDP),technology,0.04,0.3,Limits technology absorption and innovation (SDG 9.5).
 SYR,undernourishment,Undernourishment above 10% of population,social,40.8,10.0,SDG 2.1 indicator.
 SYR,electricity_gap,Electricity access below 95%,infrastructure,89.3,95.0,SDG 7.1.1 universal access.
-SYR,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.68,1.5,Below the pace needed to raise living standards meaningfully.
-THA,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,1.44,1.5,Below the pace needed to raise living standards meaningfully.
+SYR,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,0.64,1.5,Below the pace needed to raise living standards meaningfully.
+THA,weak_growth,Weak growth outlook (forecast real GDP CAGR < 1.5%),growth,1.3,1.5,Below the pace needed to raise living standards meaningfully.
 TJK,remit_dependence,Remittance dependence: inflows above 10% of GDP,external,57.66,10.0,Household incomes exposed to host-country labour markets.
 TJK,low_flfp,Female labour-force participation below 30%,labour,21.9,30.0,Large untapped labour supply; growth and inclusion gap.
 TJK,weak_gov,Weak government effectiveness (WGI < -0.5),governance,-0.69,-0.5,Constrains policy implementation capacity.
@@ -270,4 +268,4 @@ YEM,clean_cooking,Most households lack clean cooking fuels,infrastructure,47.0,5
 YEM,water_gap,Basic drinking-water access below 90%,infrastructure,75.04,90.0,SDG 6.1.
 YEM,unbanked,Majority of adults lack a financial account,finance,11.9,50.0,SDG 8.10 financial inclusion.
 YEM,air_pollution,"Hazardous air pollution (PM2.5 > 35 µg/m³, WHO interim target 1)",climate,46.84,35.0,Large health and productivity costs.
-YEM,contraction,Forecast real GDP contraction,growth,-0.85,0.0,Model projects shrinking real output.
+YEM,contraction,Forecast real GDP contraction,growth,-0.67,0.0,Model projects shrinking real output.

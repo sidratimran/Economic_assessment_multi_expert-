@@ -58,5 +58,5 @@ def fetch(iso3: list[str], refresh: bool = False, log=print) -> pd.DataFrame:
             break
     df = pd.DataFrame(rows, columns=["iso3", "year", "key", "value"])
     df.to_csv(CACHE, index=False)
-    log(f"  ✓ IMF WEO (DBnomics)      {len(df):>5} obs  {df.iso3.nunique()} economies  {df.key.nunique()} series")
+    log(f"  OK IMF WEO (DBnomics)      {len(df):>5} obs  {df.iso3.nunique()} economies  {df.key.nunique()} series")
     return df
